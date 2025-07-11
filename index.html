@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parth Personal Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: linear-gradient(135deg, #5a189a, #7b2cbf); color: #111; min-height: 100vh; }
+a { text-decoration: none; color: inherit; }
+/* Keyframe for slow rotation */
+@keyframes rotate3D {
+  0%   { transform: rotateY(0deg) rotateX(0deg); }
+  25%  { transform: rotateY(5deg) rotateX(3deg); }
+  50%  { transform: rotateY(0deg) rotateX(0deg); }
+  75%  { transform: rotateY(-5deg) rotateX(-3deg); }
+  100% { transform: rotateY(0deg) rotateX(0deg); }
+}
+
+/* Apply to the name */
+.logo-name {
+  font-family: 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #7b2cbf;
+  white-space: nowrap;
+  animation: rotate3D 6s infinite ease-in-out;
+  transform-style: preserve-3d;
+  text-shadow: 2px 2px 10px rgba(123, 44, 191, 0.4);
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.15);
+  padding: 50px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;  /* This allows it to adjust on smaller screens */
+  margin-bottom: 30px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Space between nav links */
+}
+
+nav a {
+  font-size: 0.95rem;
+  color: #555;
+  transition: color 0.3s;
+  padding: 8px 12px;
+}
+
+nav a:hover {
+  color: #7b2cbf;
+  background-color: #f3e9ff;
+  border-radius: 6px;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+
+.section { padding: 60px 0; border-bottom: 1px solid #eee; opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.section.visible { opacity: 1; transform: translateY(0); }
+.section h2 { font-size: 1.8rem; color: #7b2cbf; margin-bottom: 20px; }
+.section p { color: #333; line-height: 1.6; }
+
+.intro { display: flex; gap: 40px; align-items: center; }
+.intro-text h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; }
+.intro-text p { font-size: 1rem; margin-bottom: 20px; line-height: 1.4; color: #333; }
+.highlight { color: #7b2cbf; font-weight: 700; }
+.btn-hello { background: #7b2cbf; color: white; padding: 10px 25px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 1rem; transition: background 0.3s; }
+.btn-hello:hover { background: #5a189a; }
+
+.intro-image { flex-shrink: 0; width: 320px; height: 380px; border-radius: 14px; overflow: hidden; box-shadow: 0 0 25px rgba(122, 63, 255, 0.3); transition: transform 0.6s ease, box-shadow 0.6s ease; }
+.intro-image:hover { transform: translateY(-10px) rotateX(5deg) rotateY(5deg); box-shadow: 0 20px 30px rgba(122, 63, 255, 0.5); }
+.intro-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.visits { padding: 50px 0; text-align: center; font-size: 1.2rem; color: #555; }
+.visits strong { font-size: 1.6rem; color: #7b2cbf; }
+
+/* Tablets and below */
+@media (max-width: 900px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-image {
+    width: 250px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .logo-name {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
+
+  .intro-image {
+    width: 200px;
+    height: 250px;
+  }
+
+  .btn-hello {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .section p,
+  .section li {
+    font-size: 0.95rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+<header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap;">
+  
+  <div class="logo-name">Parth Patel</div>
+
+  <nav style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Article</a>
+    <a href="#contact" style="background-color: #7b2cbf; color: white; padding: 8px 16px; border-radius: 6px; font-weight: 600;">Contact</a>
+  </nav>
+
+</header>
+
+
+
+
+  <main class="intro" id="home">
+    <div class="intro-text">
+      <h1>Hello, I’m <span class="highlight">Parth Patel</span></h1>
+      <p style="font-size: 1rem; line-height: 1.6;">
+  I'm a final-year <span style="color:#7b2cbf; font-weight:600;">Computer Engineering student</span>, 
+   <span style="color:#7b2cbf; font-weight:600;">AI</span>, and aspiring 
+  <span style="color:#7b2cbf; font-weight:600;">Business Analyst</span> based in Songadh, Gujarat. 
+  I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design.
+</p>
+
+<p style="font-size: 1rem; line-height: 1.6;">
+  I am passionate about exploring the fields of <span style="color:#7b2cbf; font-weight:600;">Business Analytics</span> 
+  and <span style="color:#7b2cbf; font-weight:600;">Artificial Intelligence</span>, aiming to solve real-world problems through 
+  data-driven insights and smart technologies.
+</p>
+
+      <button class="btn-hello">Say Hello!</button>
+    </div>
+    <div class="intro-image">
+  <img src="pr2.jpg" alt="Profile Image">
+</div>
+
+  </main>
+
+  <section id="about" class="section visible">
+    <h2>About Me</h2>
+    <p>Hi, I’m Parth Patel — an enthusiastic Information Technology student passionate about creating impactful solutions through technology.</p>
+    <p>I am currently pursuing my Bachelor's in IT and continuously exploring new fields of technology through hands-on projects and research. My technical learning journey includes working in various domains such as:</p>
+    <ul>
+      <li>Web Development & Front-End Technologies</li>
+      <li>Artificial Intelligence & Machine Learning (AI/ML)</li>
+      <li>Deep Learning Algorithms</li>
+      <li>Internet of Things (IoT) Applications</li>
+      <li>Data Analysis & Visualization</li>
+      <li>Cloud Computing Basics</li>
+    </ul>
+    <p>I enjoy solving problems that matter, whether by creating web applications, building intelligent systems, or automating everyday tasks.</p>
+    <p>I am also honored to serve as a <strong>Member of the Youth Parliament of India 2025</strong>, where I participated in <strong>Gujarat Vidhan Sabha (Assembly)</strong> sessions. There, I engaged in national-level discussions, promoted youth participation in policymaking, and advocated for innovation in digital education. I had the privilege to speak on topics related to <strong>India’s economic growth and the Constitution</strong>, inspiring young leaders to contribute towards the nation's progress.</p>
+    <h3>👨‍💻 Technical Skills</h3>
+    <ul>
+      <li><strong>Programming Languages:</strong> Python, JavaScript, C, C++, Java</li>
+      <li><strong>Web Technologies:</strong> HTML5, CSS3, Bootstrap, React.js</li>
+      <li><strong>Database:</strong> MySQL, MongoDB (Basic)</li>
+      <li><strong>Other Tools:</strong> GitHub, VS Code, Google Colab, Jupyter Notebook</li>
+      <li><strong>Core Interests:</strong> Web Development, AI/ML, IoT, Data Science, Open-Source Contribution</li>
+    </ul>
+    <p>I believe that learning never stops and that collaboration is the key to building a better digital future. I'm always open to new ideas, challenges, and opportunities.</p>
+  </section>
+
+  <section id="achievements" class="section">
+  <h2>🏆 Achievements</h2>
+
+  <div style="
+      max-height: 250px;
+      overflow-y: auto;
+      padding-right: 12px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: linear-gradient(to bottom, #ffffff 90%, #f0f0f0),
+                  linear-gradient(to top, #ffffff 90%, #f0f0f0);
+      background-repeat: no-repeat;
+      background-size: 100% 20px;
+      background-position: top, bottom;
+      position: relative;
+    ">
+
+    <p>🏛 <strong>Member of the Youth Parliament of India - 2025:</strong> Contributed to national-level discussions on youth empowerment and digital innovation.</p><br>
+
+    <p>🤖 <strong>Completed Internship in Artificial Intelligence at CodeUnnati (SAP) - 2025:</strong> Gained hands-on experience in AI-based solutions.</p><br>
+
+    <p>🖋️ <strong>1st Place in Inter-College Creative Writing Competition - 2024:</strong> Recognized for crafting engaging and impactful narratives.</p><br>
+
+    <p>🎓 <strong>Graduated Diploma in Computer Engineering with 9.05 CGPA - 2023:</strong> Demonstrated academic excellence in technical education.</p><br>
+<p>🎨 <strong>2nd Place in Inter-College Poster & Slogan Competition - 2022:</strong> Earned recognition for creativity and impactful message design at an inter-college level event.</p><br>
+    <p>🏅 <strong>1st Rank in College-Level Poster Presentation Competition - 2022:</strong> Showcased innovative thinking and creativity.</p><br>
+
+    <p>🎤 <strong>2nd Rank in College-Level Speech Competition - 2022:</strong> Recognized for strong communication and public speaking skills.</p><br>
+
+    <p>🎯 <strong>Passed C-DAC Exam with an A Grade - 2020:</strong> Certified in advanced computing fundamentals.</p><br>
+
+    <p>⚛️ <strong>Represented South Gujarat at the National Plasma Research Center (IRC), Gandhinagar - 2017:</strong> Participated in plasma technology research activities.</p><br>
+
+    <p>🌟 <strong>Achieved A+ Rank in Reliance Innovation Thinking Program - 2016:</strong> Recognized for creative problem-solving skills.</p><br>
+
+    <p>⚽ <strong>Participated in Mahakumbh Kho-Kho Tournament, Reached District Level - 2016:</strong> Demonstrated sportsmanship and team spirit.</p><br>
+
+    <p>🧠 <strong>Passed GK/IQ Examinations with A and A+ Grades - 2014 to 2017:</strong> Reflected strong general knowledge and logical reasoning.</p><br>
+
+    <p>📜 <strong>Passed Bharatiya Sanskriti (Indian Culture) Examination, Haridwar - 2013 to 2018:</strong> Showcased dedication to cultural studies.</p><br>
+
+    <p>➗ <strong>Passed Ramanujan Mathematics Olympiad with a B+ Grade - 2013:</strong> Highlighted aptitude in mathematical problem-solving.</p>
+  </div>
+
+  <p style="font-size: 0.9rem; text-align: center; margin-top: 8px; color: #7b2cbf;">⬇️ Scroll to see more achievements ⬇️</p>
+</section>
+
+<section id="education" class="section">
+  <h2>🎓 Education</h2>
+
+  <div style="border-left: 3px solid #7b2cbf; padding-left: 20px; line-height: 1.8;">
+    
+    <p><strong>Bachelor of Engineering in Computer Science</strong><br>
+      <a href="https://rngpit.ac.in/” target="_blank" style="color:#7b2cbf;">RNG Patel Institute of Technology</a>, Bardoli, Gujarat<br>
+      Final Year Student | Specialization: <strong>Artificial Intelligence & Machine Learning (AI/ML)</strong><br>
+      Actively engaged in academic projects, coding competitions, and IT club activities.
+    </p><br>
+
+    <p><strong>Diploma in Computer Engineering</strong><br>
+      <a href="https://ngpatelpoly.ac.in/” target="_blank" style="color:#7b2cbf;"> N. G. Patel Polytechnic</a>,Bardoli, Gujarat<br>
+      Focused on computer fundamentals, programming, and electronics.<br>
+      Participated in technical events and hands-on mini-projects.
+    </p><br>
+
+    <p><strong>Secondary Education (10th Standard)</strong><br>
+      <a href="https://www.facebook.com/uvbsongadh" target="_blank" style="color:#7b2cbf;">Unique Vidhya Bhavan School</a>, Songadh, Gujarat<br>
+      Secured <strong>88.01%</strong> in board examinations.<br>
+      Developed strong foundations in science, mathematics, and logical reasoning through active participation in school-level competitions.
+    </p>
+    
+  </div>
+</section>
+<section id="projects" class="section">
+  <h2>🛠️ Projects & Research Papers</h2>
+
+  <div style="max-height: 320px; overflow-y: auto; padding-right: 10px; border-left: 3px solid #7b2cbf; padding-left: 20px;">
+
+    <p><strong>Smart Home Service System</strong> — Developed a <span style="color:#7b2cbf;">web application</span> for smart home device management.</p><br>
+
+    <p><strong>Diabetic Prediction System</strong> — Built an <span style="color:#7b2cbf;">ML-based website</span> for predicting diabetes risk based on user input data.</p><br>
+
+    <p><strong>Car Price Prediction</strong> — Created a <span style="color:#7b2cbf;">CNN Deep Learning model</span> to predict car prices from specifications and market trends.</p><br>
+
+    <p><strong>IoT Monitoring System</strong> — Implemented an <span style="color:#7b2cbf;">IoT solution</span> for environmental data monitoring and reporting.</p><br>
+
+    <p><strong>Research Paper on High Performance Computing (HPC)</strong> — Drafted in <span style="color:#7b2cbf;">IEEE format</span> covering <span style="color:#7b2cbf;">parallel and high-speed computing systems</span>. (Not yet published)</p><br>
+
+    <p><strong>Research Paper on Smart Monitoring Systems</strong> — Drafted in <span style="color:#7b2cbf;">IEEE format</span> presenting <span style="color:#7b2cbf;">real-time monitoring solutions</span>. (Not yet published)</p><br>
+
+    <p><strong>India's GDP Forecast (2030–2050)</strong> — Conducted <span style="color:#7b2cbf;">data analytics</span> to predict economic trends of India’s future growth.</p><br>
+
+    <p><strong>Instagram Personal Data Analytics</strong> — Used <span style="color:#7b2cbf;">Python</span> and <span style="color:#7b2cbf;">Matplotlib</span> to analyze engagement trends and audience reach on my personal Instagram account.</p><br>
+
+    <p><strong>Virtual Marker</strong> — Created a <span style="color:#7b2cbf;">Deep Learning</span> application to draw on-screen without a physical device.</p><br>
+
+    <p><strong>Non-Physical Virtual Mouse</strong> — Developed a gesture-controlled mouse using <span style="color:#7b2cbf;">OpenCV</span> for contactless computer interaction.</p><br>
+
+    <p><strong>Portfolio Website</strong> — Built a <span style="color:#7b2cbf;">personal portfolio site</span> to showcase my projects, skills, and achievements.</p><br>
+
+  </div>
+
+  <p style="font-size: 0.9rem; color: #555; margin-top: 10px;">⬆ Scroll to see more projects ⬇</p>
+</section>
+
+ 
+ <section id="blog" class="section">
+  <h2>📝 Blog / Articles</h2>
+
+  <ul style="list-style: none; padding-left: 0;">
+    <li style="margin-bottom: 15px;">
+      <a href="https://www.linkedin.com/pulse/top-5-ai-tools-everyone-should-try-2025-parth-patel-2v77e/?trackingId=ergDDrRyBQaXt9t4BVBD8w%3D%3D" target="_blank" style="color: #7b2cbf; font-weight: bold;">
+        🔗 🚀Top 5 AI Tools Everyone Should Try in 2025
+      </a>
+      <p style="color: #555; font-size: 0.95rem;">Published on LinkedIn – Explored Top 5 AI tool fro smart and time saver</p>
+    </li>
+</section>
+
+<section id="contact" class="section">
+  <h2>📞 Contact Me</h2>
+
+  <p style="font-size: 1.1rem; margin-bottom: 20px;">
+    I'm always open to new opportunities, collaborations, or just a friendly chat about tech. Feel free to reach out!
+  </p>
+
+  <ul style="list-style: none; padding-left: 0; font-size: 1rem;">
+    <li><strong>Email:</strong> <a href="mailto:ptlpatel27@example.com" style="color:#7b2cbf;">ptlpatel27@example.com</a></li><br>
+    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/parth-patel-34920a370" target="_blank" style="color:#7b2cbf;">linkedin.com/in/parth-patel</a></li><br>
+    <li><strong>GitHub:</strong> <a href="https://github.com/PtlParth27" target="_blank" style="color:#7b2cbf;">github.com/PtlParth27</a></li><br>
+    <li><strong>naukri.com:</strong> Parth Ravindrabhai Patel</li><br>
+    <li><strong>Portfolio:</strong> <a href="" target="_blank" style="color:#7b2cbf;">👋 Welcome to my digital space 🌐 — wherever you are 🌏, discover who I am 💡 and what I create ⚙️.</a></li><br>
+</ul>
+</section>
+<footer style="text-align: center; padding: 20px 0; color: #555; font-size: 0.9rem;">
+  © 2025 Parth Patel. All Rights Reserved.
+</footer>
+</div> <!-- This closes your .container div -->
+
+<script>
+// Visit Counter Script
+fetch('https://api.countapi.xyz/hit/parthpatelportfolio/visits')
+  .then(res => res.json())
+  .then(res => {
+    document.getElementById('visit-count').innerText = res.value + ' visitors';
+  });
+
+// Reveal sections on scroll
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>
+
+
